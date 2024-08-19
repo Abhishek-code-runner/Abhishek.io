@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="orderstyle.css">
+    <title>Order</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="index.html">Abhishek</a></span>
+            
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Abhishek</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+  
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+  
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    
+                </div>
+  
+            
+                </div>
+            </div>
+        </div>
+    <br><br><br><br>
+    <h1>Pest Control Order Form</h1>
+    
+    <form>
+      <label for="pest">Choose a pest:</label>
+      <select id="pest" name="pest">
+        <option value="beetles">Beetles</option>
+        <option value="lizards">Lizards</option>
+        <option value="cockroaches">Cockroaches</option>
+        <option value="mosquitoes">Mosquitoes</option>
+        <option value="rodents">Rodents</option>
+      </select>
+      <br><br>
+      <label for="bhk">Choose a housing size:</label>
+      <select id="bhk" name="bhk">
+        <option value="1">1 BHK</option>
+        <option value="2">2 BHK</option>
+        <option value="3">3 BHK</option>
+        <option value="4">4 BHK</option>
+      </select>
+      <br><br>
+      <label for="total">Total cost:</label>
+      <output id="total" name="total"></output>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>  
+    <script>
+          
+          
+        const prices = {
+          beetles: {
+            1: "free",
+            2: 200,
+            3: 300,
+            4: 400
+          },
+          lizards: {
+            1: 150,
+            2: 300,
+            3: 450,
+            4: 600
+          },
+          cockroaches: {
+            1: 200,
+            2: 400,
+            3: 600,
+            4: 800
+          },
+          mosquitoes: {
+            1: 50,
+            2: 100,
+            3: 150,
+            4: 200
+          },
+          rodents: {
+            1: 250,
+            2: 500,
+            3: 750,
+            4: 1000
+          }
+        };
+        
+        
+        const pestSelect = document.getElementById("pest");
+        const bhkSelect = document.getElementById("bhk");
+        const totalOutput = document.getElementById("total");
+        
+        
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+        
+          
+          const pest = pestSelect.value;
+          const bhk = bhkSelect.value;
+        
+         
+          const total = prices[pest][bhk];
+        
+         
+          totalOutput.value = "₹ " + total;
+        });
+        </script>
+        <br><br><br><br><br><br><br><br>
+        <footer>
+            <p>&copy; 2024 Past Control😎. All rights reserved.</p>
+            <p>
+              <a href="about.html">About</a> |
+              <a href="C:\Users\Abhishek Sharma\Desktop\Website\login.html">login</a> |
+              <a href="/privacy-policy">Privacy Policy</a>
+            </p>
+            <ul>
+              <li><a href="https://www.facebook.com/unofficial_abhishek34">Facebook</a></li>
+              <li><a href="https://www.twitter.com/unofficial_abhishek34">Twitter</a></li>
+              <li><a href="https://www.instagram.com/unofficial_abhishek534">Instagram</a></li>
+            </ul>
+          </footer> 
+</body>
+</html>
